@@ -417,7 +417,7 @@ export default {
     }).then(function (res) {
       for (var i = 0; i < 10; i++) {
         // console.log(res.blocks[0].extInfo.banners[i].pic)
-        that.imgs.push(res.data.data.blocks[0].extInfo.banners[i].pic)
+        that.imgs.push(res.data.blocks[0].extInfo.banners[i].pic)
       }
     }).catch(function (err) {
       console.log(err)
@@ -429,12 +429,13 @@ export default {
       // params: {}
     }).then((res) => {
       for (var key = 0; key < 3; key++) {
+        // console.log(res)
         // djprogram_name: [],
         //   djprogram_picUrl: [],
         //   djprogram_adjustedPlayCount: [],
-        that.djprogram_name.push(res.data.result[key].name)
-        that.djprogram_picUrl.push(res.data.result[key].picUrl)
-        that.djprogram_adjustedPlayCount.push(res.data.result[key].program.adjustedPlayCount)
+        that.djprogram_name.push(res.result[key].name)
+        that.djprogram_picUrl.push(res.result[key].picUrl)
+        that.djprogram_adjustedPlayCount.push(res.result[key].program.adjustedPlayCount)
         // console.log(res.result[key].name)
         // console.log(res.result[key].picUrl)
         // console.log(res.result[key].program.adjustedPlayCount)
@@ -454,9 +455,9 @@ export default {
         // console.log(res.result[0].name)
         // console.log(res.result[0].picUrl)
         // console.log(res.result[0].playCount)
-        that.personalized_name.push(res.data.result[key].name)
-        that.personalized_picUrl.push(res.data.result[key].picUrl)
-        that.personalized_playCount.push(res.data.result[key].playCount)
+        that.personalized_name.push(res.result[key].name)
+        that.personalized_picUrl.push(res.result[key].picUrl)
+        that.personalized_playCount.push(res.result[key].playCount)
       }
     }).catch((err) => {
       console.log(err)
@@ -471,9 +472,9 @@ export default {
     }).then((res) => {
       // console.log(res)
       for (let i = 0; i < 10; i++) {
-        this.$store.commit('imgurlsput', res.data.weekData[i].blurPicUrl)
-        this.$store.commit('artinameput', res.data.weekData[i].artists[0].name)
-        this.$store.commit('albumnameput', res.data.weekData[i].name)
+        this.$store.commit('imgurlsput', res.weekData[i].blurPicUrl)
+        this.$store.commit('artinameput', res.weekData[i].artists[0].name)
+        this.$store.commit('albumnameput', res.weekData[i].name)
         // console.log(res[i])
         // that.imgurls.push()
         // that.artiname.push(res[i].weekData.artists[0].name)
@@ -493,10 +494,10 @@ export default {
       },
       url: '/playlist/detail'
     }).then((res) => {
-      this.tophighname = res.data.playlist.name
-      this.tophighcoverImgUrl = res.data.playlist.coverImgUrl
+      this.tophighname = res.playlist.name
+      this.tophighcoverImgUrl = res.playlist.coverImgUrl
       for (let i = 0; i < 10; i++) {
-        this.tophightracksname.push(res.data.playlist.tracks[i].name)
+        this.tophightracksname.push(res.playlist.tracks[i].name)
       }
     }).catch((err) => {
       console.log(err)
@@ -509,10 +510,10 @@ export default {
       },
       url: '/playlist/detail'
     }).then((res) => {
-      this.topnewname = res.data.playlist.name
-      this.topnewcoverImgUrl = res.data.playlist.coverImgUrl
+      this.topnewname = res.playlist.name
+      this.topnewcoverImgUrl = res.playlist.coverImgUrl
       for (let i = 0; i < 10; i++) {
-        this.topnewtracksname.push(res.data.playlist.tracks[i].name)
+        this.topnewtracksname.push(res.playlist.tracks[i].name)
       }
     }).catch((err) => {
       console.log(err)
@@ -525,10 +526,10 @@ export default {
       },
       url: '/playlist/detail'
     }).then((res) => {
-      this.topcreatename = res.data.playlist.name
-      this.topcreatecoverImgUrl = res.data.playlist.coverImgUrl
+      this.topcreatename = res.playlist.name
+      this.topcreatecoverImgUrl = res.playlist.coverImgUrl
       for (let i = 0; i < 10; i++) {
-        this.topcreatetracksname.push(res.data.playlist.tracks[i].name)
+        this.topcreatetracksname.push(res.playlist.tracks[i].name)
       }
     }).catch((err) => {
       console.log(err)

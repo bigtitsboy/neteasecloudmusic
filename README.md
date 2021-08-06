@@ -1,5 +1,10 @@
 # neteasecloudmusic
 
+# neteasecloudmusicApi
+```
+https://github.com/Binaryify/NeteaseCloudMusicApi
+```
+
 ## Project setup
 ```
 npm install
